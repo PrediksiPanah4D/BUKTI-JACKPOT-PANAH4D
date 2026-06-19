@@ -658,22 +658,37 @@ border-top:1px solid rgba(255,215,0,.15);
 .provider-title{
 text-align:center;
 font-size:26px;
-font-weight:800;
+font-weight:900;
+letter-spacing:1px;
 margin-bottom:25px;
 
 background:linear-gradient(
-135deg,
-#8f6b1d,
-#d4af37,
-#fff2b0,
-#d4af37,
-#8f6b1d
+90deg,
+#6b4f14 0%,
+#b8860b 15%,
+#ffd700 35%,
+#fff8dc 50%,
+#ffd700 65%,
+#b8860b 85%,
+#6b4f14 100%
 );
+
+background-size:300% auto;
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+
+animation:luxuryGold 6s linear infinite;
 }
 
+@keyframes luxuryGold{
+0%{
+background-position:0% center;
+}
+100%{
+background-position:300% center;
+}
+}
 .provider-grid{
 display:grid;
 grid-template-columns:
