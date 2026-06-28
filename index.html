@@ -597,7 +597,266 @@ margin-top:4px;
 
 </div>
   </div>
- <!-- Jumpscare Overlay -->
+ <!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="loader-content">
+
+        <img src="https://panahkawan.com/images/logoweb.png"
+             class="loader-logo"
+             alt="PANAH4D">
+
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+
+     <div class="loader-text">
+    <span>L</span>
+    <span>O</span>
+    <span>A</span>
+    <span>D</span>
+    <span>I</span>
+    <span>N</span>
+    <span>G</span>
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+</div>
+
+    </div>
+</div>
+  <style>
+/*=============================
+     PANAH4D LOADER V3
+     FAST • SMOOTH • MOBILE
+==============================*/
+
+#loader{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#090909;
+
+    z-index:999999;
+
+    transition:
+    opacity .35s ease,
+    visibility .35s ease;
+
+}
+
+.loader-box{
+
+    text-align:center;
+
+    animation:fadeIn .5s ease;
+
+}
+
+.loader-logo{
+
+    width:280px;
+    max-width:75vw;
+
+    user-select:none;
+    pointer-events:none;
+
+    animation:floatLogo 2.2s ease-in-out infinite;
+
+}
+
+/* BAR */
+
+.loader-bar{
+
+    width:230px;
+    height:6px;
+
+    margin:28px auto 16px;
+
+    background:#1d1d1d;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.loader-progress{
+
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(90deg,#f5b400,#ffe082);
+
+    transform:translateX(-100%);
+
+    animation:progress .85s ease forwards;
+
+}
+
+.loader-text{
+    display:flex;
+    justify-content:center;
+    gap:2px;
+    margin-top:18px;
+}
+
+.loader-text span{
+
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    background:linear-gradient(#fff7d0,#ffc107,#b87800);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.4),
+        0 2px 3px rgba(0,0,0,.35);
+
+    animation:bounce .9s infinite ease-in-out;
+}
+
+.loader-text span:nth-child(2){animation-delay:.08s;}
+.loader-text span:nth-child(3){animation-delay:.16s;}
+.loader-text span:nth-child(4){animation-delay:.24s;}
+.loader-text span:nth-child(5){animation-delay:.32s;}
+.loader-text span:nth-child(6){animation-delay:.40s;}
+.loader-text span:nth-child(7){animation-delay:.48s;}
+.loader-text span:nth-child(8){animation-delay:.56s;}
+.loader-text span:nth-child(9){animation-delay:.64s;}
+.loader-text span:nth-child(10){animation-delay:.72s;}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+        opacity:.7;
+    }
+
+    50%{
+        transform:translateY(-4px);
+        opacity:1;
+    }
+
+}
+
+.hide-loader{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+/*=============================
+          ANIMATION
+==============================*/
+
+@keyframes progress{
+
+    to{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatLogo{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.loader-logo{
+
+    width:220px;
+
+}
+
+.loader-bar{
+
+    width:190px;
+
+}
+
+.loader-text{
+
+    font-size:14px;
+
+}
+
+}
+  </style>
+  <script>
+const loader = document.getElementById("loader");
+
+function hideLoader() {
+
+    if (!loader) return;
+
+    loader.classList.add("hide-loader");
+
+    setTimeout(() => {
+        loader.remove();
+    }, 400);
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Delay 800ms agar animasi terlihat smooth
+    setTimeout(hideLoader, 800);
+
+});
+
+// Backup jika halaman lambat
+window.addEventListener("load", hideLoader);
+
+// Paksa hilang maksimal 3 detik jika ada yang macet
+setTimeout(hideLoader, 3000);
+  </script>
+  <!-- Jumpscare Overlay -->
 <div id="jumpscare">
     <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjSuuJqpibWPXrWYyiskpwy6rnx9FCYcQjtxJ0_PHU7KqXIdm_XcyDLUpbJzT509HCNOrcSKHzQiWnBOftivsF4_YU7pgbC4YRvSdyHIGQsq4g50VFwPyufegHLR9-CGceGwIhyhF3h8QYwpjvbRnQgDH6Euw6AYs7P54tZT5cU5f7XvqqcjJAENS8fXEY3" alt="Scary">
 </div>
